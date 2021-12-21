@@ -19,9 +19,9 @@ kafka-avro-console-producer --broker-list cp-helm-charts-cp-kafka-headless:9092 
 
 
 # Consume the records from the beginning of the topic:
-kafka-avro-console-consumer --topic test-avro \
-    --bootstrap-server cp-helm-charts-cp-kafka-headless:9092 \
-    --property schema.registry.url=http://cp-helm-charts-cp-schema-registry:8081 \
+kafka-avro-console-consumer --topic customer-avro \
+    --bootstrap-server 127.0.0.1:9092 \
+    --property schema.registry.url=http://127.0.0.1:8081 \
     --from-beginning
 
 

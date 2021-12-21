@@ -43,13 +43,6 @@
       <version>${kafka.version}</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/io.confluent/common-utils -->
-    <dependency>
-      <groupId>io.confluent</groupId>
-      <artifactId>common-utils</artifactId>
-      <version>${confluent.version}</version>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer -->
     <dependency>
       <groupId>io.confluent</groupId>

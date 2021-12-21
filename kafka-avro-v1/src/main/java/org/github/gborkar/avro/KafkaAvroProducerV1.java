@@ -9,23 +9,19 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 
-/**
- * Hello world!
- *
- */
 public class KafkaAvroProducerV1 
 {
     public static void main( String[] args )
     {
         final String topic = "customer-avro";
         Properties producerProperties = new Properties();
-        producerProperties.setProperty("bootstrap.server", "127.0.0.1:9092");
-        producerProperties.setProperty("acks", "all");
-        producerProperties.setProperty("retries", "10");
+        producerProperties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+        producerProperties.setProperty(ProducerConfig.ACKS_CONFIG, "all");
+        producerProperties.setProperty(ProducerConfig.RETRIES_CONFIG, "10");
         
         // Avro
-        producerProperties.setProperty("key.serializer", StringSerializer.class.getName());
-        producerProperties.setProperty("value.serializer", KafkaAvroSerializer.class.getName());
+        producerProperties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        producerProperties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
         producerProperties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
 
         // // Create a producer
